@@ -144,14 +144,14 @@ public class AccountLogin
     {
         PrivateLabel privLabel = reqState.getPrivateLabel();
         I18N i18n = privLabel.getI18N(AccountLogin.class);
-        return super._getMenuDescription(reqState,i18n.getString("AccountLogin.menuDesc","Logout"));
+        return super._getMenuDescription(reqState,i18n.getString("AccountLogin.menuDesc","退出"));
     }
 
     public String getMenuHelp(RequestProperties reqState, String parentMenuName)
     {
         PrivateLabel privLabel = reqState.getPrivateLabel();
         I18N i18n = privLabel.getI18N(AccountLogin.class);
-        return super._getMenuHelp(reqState,i18n.getString("AccountLogin.menuHelp","Logout"));
+        return super._getMenuHelp(reqState,i18n.getString("AccountLogin.menuHelp","退出"));
     }
 
     // ------------------------------------------------------------------------
@@ -161,10 +161,10 @@ public class AccountLogin
         PrivateLabel privLabel = reqState.getPrivateLabel();
         I18N i18n = privLabel.getI18N(AccountLogin.class);
         if (reqState.isLoggedIn()) {
-            return i18n.getString("AccountLogin.navDesc","Logout");
+            return i18n.getString("AccountLogin.navDesc","退出");
         } else
         if (privLabel.getBooleanProperty(PrivateLabel.PROP_AccountLogin_showLoginLink,true)) {
-            return i18n.getString("AccountLogin.navDesc.login","Login");
+            return i18n.getString("AccountLogin.navDesc.login","登录");
         } else {
             return super._getNavigationDescription(reqState,"");
         }
@@ -174,7 +174,7 @@ public class AccountLogin
     {
         PrivateLabel privLabel = reqState.getPrivateLabel();
         I18N i18n = privLabel.getI18N(AccountLogin.class);
-        return i18n.getString("AccountLogin.navTab","Logout");
+        return i18n.getString("AccountLogin.navTab","退出");
     }
 
     // ------------------------------------------------------------------------
@@ -272,7 +272,7 @@ public class AccountLogin
                 String cssLoginText = borderedCss? CSS_LOGIN_TEXT_CELL_CENTER : CSS_LOGIN_TEXT_CELL_LEFT;
                 out.println("<td class='"+cssLoginText+"'>");
                 String enterLoginText = showPasswd?
-                    i18n.getString("AccountLogin.enterLogin","Enter your Login ID and Password") :
+                    i18n.getString("AccountLogin.enterLogin","请输入您的账户和密码") :
                     i18n.getString("AccountLogin.enterLoginNoPass","Enter Login ID (No Password Required)");
                 out.println("<span style='font-size:11pt'>"+enterLoginText+"</span>");
                 out.println(HR);
@@ -284,7 +284,7 @@ public class AccountLogin
                 // account login field
                 if (acctLogin) {
                     String fldID = "accountLoginField";
-                    out.print("  <tr><td class='accountLoginFieldLabel'>"+i18n.getString("AccountLogin.account","Account:")+"</td>");
+                    out.print("  <tr><td class='accountLoginFieldLabel'>"+i18n.getString("AccountLogin.account","账户：")+"</td>");
                     out.print(      "<td class='accountLoginFieldValue'><input id='"+fldID+"' class='"+CommonServlet.CSS_TEXT_INPUT+"' type='text' "+ro+" name='"+Constants.PARM_ACCOUNT+"' value='"+accountID+"' size='24' maxlength='32'></td></tr>");
                     out.print("\n");
                     focusFieldID = fldID;
@@ -299,14 +299,14 @@ public class AccountLogin
                 } else
                 if (userLogin) {
                     String fldID = "userLoginField";
-                    out.print("  <tr><td class='accountLoginFieldLabel'>"+i18n.getString("AccountLogin.user","User:")+"</td>");
+                    out.print("  <tr><td class='accountLoginFieldLabel'>"+i18n.getString("AccountLogin.user","用户名：")+"</td>");
                     out.print(      "<td class='accountLoginFieldValue'><input id='"+fldID+"' class='"+CommonServlet.CSS_TEXT_INPUT+"' type='text' "+ro+" name='"+Constants.PARM_USER+"' value='"+userID+"' size='24' maxlength='32'></td></tr>");
                     out.print("\n");
                     if (StringTools.isBlank(focusFieldID)) { focusFieldID = fldID; }
                 } else
                 if (emailLogin) {
                     String fldID = "emailLoginField";
-                    out.print("  <tr><td class='accountLoginFieldLabel'>"+i18n.getString("AccountLogin.email","EMail:")+"</td>");
+                    out.print("  <tr><td class='accountLoginFieldLabel'>"+i18n.getString("AccountLogin.email","邮箱：")+"</td>");
                     out.print(      "<td class='accountLoginFieldValue'><input id='"+fldID+"' class='"+CommonServlet.CSS_TEXT_INPUT+"' type='text' "+ro+" name='"+Constants.PARM_USEREMAIL+"' value='"+userID+"' size='30' maxlength='40'></td></tr>");
                     out.print("\n");
                     if (StringTools.isBlank(focusFieldID)) { focusFieldID = fldID; }
@@ -314,7 +314,7 @@ public class AccountLogin
                 // password field
                 if (showPasswd) {
                     out.print("  <tr>");
-                    out.print(    "<td class='accountLoginFieldLabel'>"+i18n.getString("AccountLogin.password","Password:")+"</td>");
+                    out.print(    "<td class='accountLoginFieldLabel'>"+i18n.getString("AccountLogin.password","密码：")+"</td>");
                     out.print(    "<td class='accountLoginFieldValue'><input class='"+CommonServlet.CSS_TEXT_INPUT+"' type='password' "+ro+" name='"+Constants.PARM_PASSWORD+"' value='' size='24' maxlength='32'></td>");
                     out.print(  "</tr>\n");
                 }
@@ -334,17 +334,17 @@ public class AccountLogin
                 out.print("</table>\n");
                 // Login
                 out.print("<br>");
-                out.print("<input type='submit' name='submit' value='"+i18n.getString("AccountLogin.login","Login")+"'>\n");
+                out.print("<input type='submit' name='submit' value='"+i18n.getString("AccountLogin.login","登录")+"'>\n");
                 // forgot password
                 if (showPasswd && (forgotURL != null)) {
                    if (legacy) { out.println("<br>"); }
-                   out.println("  <span style='font-size:8pt;padding-left:10px;'><i><a href='"+forgotURL+"'>"+i18n.getString("AccountLogin.forgotPassword","Forgot your password?")+"</a></i></span>");
+                   out.println("  <span style='font-size:8pt;padding-left:10px;'><i><a href='"+forgotURL+"'>"+i18n.getString("AccountLogin.forgotPassword","忘记密码")+"</a></i></span>");
                 }
                 // end forn
                 out.println("</form>");
                 // "Cookies/JavaScript must be enabled"
-                out.println("<br/>");
-                out.println("<span style='font-size:8pt'><i>"+i18n.getString("AccountLogin.cookiesJavaScript","(Cookies and JavaScript must be enabled)")+"</i></span>");
+                //out.println("<br/>");
+                //out.println("<span style='font-size:8pt'><i>"+i18n.getString("AccountLogin.cookiesJavaScript","(Cookies and JavaScript must be enabled)")+"</i></span>");
                 //out.println("<br/>");
                 out.println("<br/>");
                 // demo
@@ -361,10 +361,10 @@ public class AccountLogin
                     //out.println("<br/>");
                 }
                 // New Account
-                if (newURL != null) {
-                    out.println(HR);
-                    out.println("<span style='font-size:8pt'><i><a href='"+newURL+"'>"+i18n.getString("AccountLogin.freeAccount","Sign up for a free account")+"</a></i></span>");
-                }
+                //if (newURL != null) {
+                //    out.println(HR);
+                //    out.println("<span style='font-size:8pt'><i><a href='"+newURL+"'>"+i18n.getString("AccountLogin.freeAccount","Sign up for a free account")+"</a></i></span>");
+                //}
                 out.println("</td>");
                 out.println("</tr>");
                 out.println("</table>");

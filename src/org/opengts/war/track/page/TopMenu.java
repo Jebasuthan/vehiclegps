@@ -108,7 +108,7 @@ public class TopMenu
     {
         PrivateLabel privLabel = reqState.getPrivateLabel();
         I18N i18n = privLabel.getI18N(TopMenu.class);
-        return super._getMenuHelp(reqState,i18n.getString("TopMenu.menuHelp","Main Menu"));
+        return super._getMenuHelp(reqState,i18n.getString("TopMenu.menuHelp","主页"));
     }
 
     // ------------------------------------------------------------------------
@@ -117,14 +117,14 @@ public class TopMenu
     {
         PrivateLabel privLabel = reqState.getPrivateLabel();
         I18N i18n = privLabel.getI18N(TopMenu.class);
-        return super._getNavigationDescription(reqState,i18n.getString("TopMenu.navDesc","Main Menu"));
+        return super._getNavigationDescription(reqState,i18n.getString("TopMenu.navDesc","主页"));
     }
 
     public String getNavigationTab(RequestProperties reqState)
     {
         PrivateLabel privLabel = reqState.getPrivateLabel();
         I18N i18n = privLabel.getI18N(TopMenu.class);
-        return super._getNavigationTab(reqState,i18n.getString("TopMenu.navTab","Main Menu"));
+        return super._getNavigationTab(reqState,i18n.getString("TopMenu.navTab","主页"));
     }
 
     // ------------------------------------------------------------------------
@@ -217,10 +217,10 @@ public class TopMenu
                 /* frame header */
                 if (showHeader) {
                     out.println("<span class='"+CommonServlet.CSS_MENU_TITLE+"'>"+
-                        i18n.getString("TopMenu.mainMenu","Main Menu")+
+                        i18n.getString("TopMenu.mainMenu","主页")+
                         "</span><br/>");
                     out.println("<span class='"+CommonServlet.CSS_MENU_INSTRUCTIONS+"'>"+
-                        i18n.getString("TopMenu.selectItem","Please select an item from the following menu:")+
+                        i18n.getString("TopMenu.selectItem","请从下面的菜单中选择所需项:")+
                         "</span><br/>");
                     out.println("<hr/>");
                 }

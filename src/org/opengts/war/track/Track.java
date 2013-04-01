@@ -482,7 +482,7 @@ public class Track
         }
 
         /* response character set */
-        ////response.setCharacterEncoding("UTF-8");         
+        response.setCharacterEncoding("UTF-8");         
 
         /* action request */
         String pageName     = AttributeTools.getRequestString(request, CommonServlet.PARM_PAGE    , ""); // query only

@@ -260,7 +260,7 @@ File     : build.xml
   </target>
 
   <!-- ======================================================================== -->
-  
+	
   <!-- Target: gtsdmtp -->
   <target name="gtsdmtp.jar" depends="gtsdmtp"/>
   <target name="gtsdmtp" depends="prepare,gtsdb" 
@@ -268,7 +268,8 @@ File     : build.xml
     <echo message="Creating 'gtsdmtp.jar' ..."/>
 
     <!-- compile OpenGTS/OpenDMTP wrapper -->
-    <javac srcdir="${src.gts}"
+    <javac encoding="utf-8" 
+    	srcdir="${src.gts}"
         includeAntRuntime="false"
         source="${compiler.source}"
         target="${compiler.target}"
@@ -328,9 +329,8 @@ File     : build.xml
 
     <!-- compile GTS db -->
     <echo message="Creating gtsdb.jar ..."/>
-    <javac srcdir="${src.gts}"
+    <javac srcdir="${src.gts}" encoding="utf-8" 
         includeAntRuntime="false"
-        encoding="UTF-8"
         source="${compiler.source}"
         target="${compiler.target}"
         destdir="${build.home}"
@@ -429,7 +429,7 @@ File     : build.xml
     <echo message="Compiling gtsutils.jar Excel Tools source ... "/>
     <!-- compile "ExcelTools.java" -->
     <!-- (continue if this compile fails) -->
-    <javac srcdir="${src.gts}"
+    <javac srcdir="${src.gts}" encoding="utf-8"
         includeAntRuntime="false"
         source="${compiler.source}"
         target="${compiler.target}"
@@ -454,7 +454,7 @@ File     : build.xml
     <echo message="Compiling gtsutils.jar Signal Handler source ... "/>
     <!-- compile "PosixSignalHandler.java" -->
     <!-- (continue if this compile fails) -->
-    <javac srcdir="${src.gts}"
+    <javac srcdir="${src.gts}" encoding="utf-8"
         includeAntRuntime="false"
         source="${compiler.source}"
         target="${compiler.target}"
@@ -488,7 +488,7 @@ File     : build.xml
     -->
 
     <!-- compile GTS utils (sans "SendMailArgs.java", "ExcelTools.java") -->
-    <javac srcdir="${src.gts}"
+    <javac srcdir="${src.gts}" encoding="utf-8"
         includeAntRuntime="false"
         source="${compiler.source}"
         target="${compiler.target}"
@@ -516,7 +516,7 @@ File     : build.xml
     <!-- compile "SendMailArgs.java" -->
     <!-- (continue if this compile fails) -->
     <echo message="Compiling SendMailArgs.java (optional if 'mail.jar' not available) ... "/>
-    <javac srcdir="${src.gts}"
+    <javac srcdir="${src.gts}" encoding="utf-8" 
         includeAntRuntime="false"
         source="${compiler.source}"
         target="${compiler.target}"
@@ -534,7 +534,7 @@ File     : build.xml
 
     <!-- compile GTS dbtools -->
     <echo message="Compiling dbtools ... "/>
-    <javac srcdir="${src.gts}"
+    <javac srcdir="${src.gts}" encoding="utf-8"
         includeAntRuntime="false"
         source="${compiler.source}"
         target="${compiler.target}"
@@ -613,7 +613,7 @@ File     : build.xml
     <property name="compile.war.classpath" refid="compile.war.classpath"/>
 
     <!-- compile war tools -->
-    <javac srcdir="${src.gts}"
+    <javac srcdir="${src.gts}" encoding="utf-8"
         includeAntRuntime="false"
         source="${compiler.source}"
         target="${compiler.target}"
@@ -662,7 +662,7 @@ File     : build.xml
     <property name="compile.war.classpath" refid="compile.war.classpath"/>
     
     <!-- compile maps -->
-    <javac srcdir="${src.gts}"
+    <javac srcdir="${src.gts}" encoding="utf-8"
         includeAntRuntime="false"
         source="${compiler.source}"
         target="${compiler.target}"
@@ -797,7 +797,7 @@ File     : build.xml
     <property name="compile.war.classpath" refid="compile.war.classpath"/>
 
     <!-- compile track servlet -->
-    <javac srcdir="${src.gts}"
+    <javac srcdir="${src.gts}" encoding="utf-8"
         includeAntRuntime="false"
         source="${compiler.source}"
         target="${compiler.target}"
@@ -971,7 +971,7 @@ File     : build.xml
     <property name="compile.war.classpath" refid="compile.war.classpath"/>
 
     <!-- compile service servlet -->
-    <javac srcdir="${src.gts}"
+    <javac srcdir="${src.gts}" encoding="utf-8"
         includeAntRuntime="false"
         source="${compiler.source}"
         target="${compiler.target}"
@@ -1071,7 +1071,7 @@ File     : build.xml
     <property name="compile.war.classpath" refid="compile.war.classpath"/>
 
     <!-- compile event servlet -->
-    <javac srcdir="${src.gts}"
+    <javac srcdir="${src.gts}" encoding="utf-8"
         includeAntRuntime="false"
         source="${compiler.source}"
         target="${compiler.target}"
@@ -1196,7 +1196,7 @@ File     : build.xml
     <mkdir dir="${build.mologogo}/WEB-INF/tlds"/>
     <property name="compile.war.classpath" refid="compile.war.classpath"/>
 
-    <javac srcdir="${src.gts}"
+    <javac srcdir="${src.gts}" encoding="utf-8"
         includeAntRuntime="false"
         source="${compiler.source}"
         target="${compiler.target}"
@@ -1320,7 +1320,7 @@ File     : build.xml
     <mkdir dir="${build.gprmc}/WEB-INF/tlds"/>
     <property name="compile.war.classpath" refid="compile.war.classpath"/>
 
-    <javac srcdir="${src.gts}"
+    <javac srcdir="${src.gts}" encoding="utf-8"
         includeAntRuntime="false"
         source="${compiler.source}"
         target="${compiler.target}"
@@ -1444,7 +1444,7 @@ File     : build.xml
     <property name="compile.war.classpath" refid="compile.war.classpath"/>
 
     <!-- compile gc101 server -->
-    <javac srcdir="${src.gts}"
+    <javac srcdir="${src.gts}" encoding="utf-8"
         includeAntRuntime="false"
         source="${compiler.source}"
         target="${compiler.target}"
@@ -1568,7 +1568,7 @@ File     : build.xml
     <mkdir dir="${build.gpsmapper}/WEB-INF/tlds"/>
     <property name="compile.war.classpath" refid="compile.war.classpath"/>
 
-    <javac srcdir="${src.gts}"
+    <javac srcdir="${src.gts}" encoding="utf-8"
         includeAntRuntime="false"
         source="${compiler.source}"
         target="${compiler.target}"
@@ -1676,7 +1676,7 @@ File     : build.xml
     <echo message="template ..."/>
 
     <!-- compile template -->
-    <javac srcdir="${src.gts}"
+    <javac srcdir="${src.gts}" encoding="utf-8"
         includeAntRuntime="false"
         source="${compiler.source}"
         target="${compiler.target}"
@@ -1714,7 +1714,7 @@ File     : build.xml
     <echo message="template_old ..."/>
 
     <!-- compile template_old -->
-    <javac srcdir="${src.gts}"
+    <javac srcdir="${src.gts}" encoding="utf-8"
         includeAntRuntime="false"
         source="${compiler.source}"
         target="${compiler.target}"
@@ -1750,7 +1750,7 @@ File     : build.xml
     <echo message="I-Care G3300 server 'icare.jar' ..."/>
 
     <!-- compile -->
-    <javac srcdir="${src.gts}"
+    <javac srcdir="${src.gts}" encoding="utf-8"
         includeAntRuntime="false"
         source="${compiler.source}"
         target="${compiler.target}"
@@ -1788,7 +1788,7 @@ File     : build.xml
     <echo message="Aspicore 'aspicore.jar' ..."/>
 
     <!-- compile -->
-    <javac srcdir="${src.gts}"
+    <javac srcdir="${src.gts}" encoding="utf-8"
         includeAntRuntime="false"
         source="${compiler.source}"
         target="${compiler.target}"
@@ -1826,7 +1826,7 @@ File     : build.xml
     <echo message="TK102/TK103 'tk10x.jar' ..."/>
 
     <!-- compile -->
-    <javac srcdir="${src.gts}"
+    <javac srcdir="${src.gts}" encoding="utf-8"
         includeAntRuntime="false"
         source="${compiler.source}"
         target="${compiler.target}"
@@ -1864,7 +1864,7 @@ File     : build.xml
     <echo message="SipGear 'sipgear.jar' ..."/>
 
     <!-- compile -->
-    <javac srcdir="${src.gts}"
+    <javac srcdir="${src.gts}" encoding="utf-8"
         includeAntRuntime="false"
         source="${compiler.source}"
         target="${compiler.target}"
@@ -1902,7 +1902,7 @@ File     : build.xml
     <echo message="TAIP server 'taip.jar' ..."/>
 
     <!-- compile -->
-    <javac srcdir="${src.gts}"
+    <javac srcdir="${src.gts}" encoding="utf-8"
         includeAntRuntime="false"
         source="${compiler.source}"
         target="${compiler.target}"
@@ -1940,7 +1940,7 @@ File     : build.xml
     <echo message="Lantrix T1800/T2000 DCS 'lantrix.jar' ..."/>
 
     <!-- compile -->
-    <javac srcdir="${src.gts}"
+    <javac srcdir="${src.gts}" encoding="utf-8"
         includeAntRuntime="false"
         source="${compiler.source}"
         target="${compiler.target}"
@@ -1978,7 +1978,7 @@ File     : build.xml
     <echo message="Astra Telematics DCS 'astra.jar' ..."/>
 
     <!-- compile -->
-    <javac srcdir="${src.gts}"
+    <javac srcdir="${src.gts}" encoding="utf-8"
         includeAntRuntime="false"
         source="${compiler.source}"
         target="${compiler.target}"
@@ -2016,7 +2016,8 @@ File     : build.xml
     <echo message="Tools ..."/>
 
     <!-- compile tools -->
-    <javac srcdir="${src.gts}"
+    <javac encoding="utf-8" 
+  		srcdir="${src.gts}"
         includeAntRuntime="false"
         source="${compiler.source}"
         target="${compiler.target}"
@@ -2061,7 +2062,8 @@ File     : build.xml
     <echo message="Print System Properties ... "/>
 
     <!-- compile -->
-    <javac srcdir="${src.gts}"
+    <javac encoding="utf-8" 
+  		srcdir="${src.gts}"
         includeAntRuntime="false"
         source="${compiler.source}"
         target="${compiler.target}"
@@ -2237,6 +2239,19 @@ File     : build.xml
     <antcall target="download" inheritAll="true" inheritRefs="true"/>
   </target>
   -->
+	
+	<target name="template.run" depends="template"
+	description="Run 'Device Communication Server' template ...">
+	<echo message=" template run ..."/>
+	<java fork="true" classname="org.opengts.servers.template.Main">
+	<arg value="-conf=${Env.GTS_HOME}/default.conf"/>
+	<arg value="-start"/>
+	<classpath>
+	<path refid="compile.classpath"/>
+	<path location="${build.lib}/template.jar"/>
+	</classpath>
+	</java>
+	</target>
 
   <!-- ======================================================================== -->
 
